@@ -1,0 +1,17 @@
+services:
+    hiring.manager.demands_manager:
+        class: HiringBundle\Manager\DemandsManager
+        arguments: ['@service_container']
+
+    hiring.repository.demands_repository:
+        class: HiringBundle\Repository\DemandsRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments: [HiringBundle\Entity\Demand]
+
+    hiring.form_type.demands_filters_type:
+        class: HiringBundle\Form\Type\DemandsFiltersType
+        tags:
+            - { name: form.type, alias: HiringBundle\Form\Type\DemandsFiltersType }
+
+    hiring.model.demands_filters:
+        class: HiringBundle\Model\DemandsFilters

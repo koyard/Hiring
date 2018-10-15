@@ -1,0 +1,5 @@
+hiring:
+    resource: "@HiringBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

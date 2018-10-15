@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+
+    <title>Hiring test task</title>
+
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock stylesheets %}
+</head>
+
+<body>
+    {% block content_wrapper %}
+        {% block content %}{% endblock content %}
+    {% endblock content_wrapper %}
+
+    {% block javascripts %}
+        {% javascripts '@jquery' '@bootstrap_js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock javascripts %}
+</body>
+</html>
